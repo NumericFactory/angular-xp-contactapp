@@ -1,0 +1,65 @@
+<h1>Ajouter</h1>
+<form class="mb-2 mt-2" [formGroup]="form" (ngSubmit)='addContactAction(form.value)'>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Civilité</label>
+            <select [class.isInvalid]="submitted && form.controls.title.errors" formControlName="title" type="text" class="form-control">
+              <option value="ms">Monsieur</option>
+              <option value="mr">Madame</option>
+            </select>
+            <div class="error" *ngIf="submitted && form.controls.title.hasError('required')">Champ requis</div>
+              
+            
+    
+          </div>
+      <div class="form-group col-md-4">
+        <label>Prénom</label>
+        <input [class.isInvalid]="submitted && form.controls.first.errors" formControlName="first" type="text" class="form-control">
+        
+          <div class="error" *ngIf="submitted && form.controls.first.hasError('required')">Champ requis</div>
+          <div class="error" *ngIf="submitted && form.controls.first.hasError('minlength')">Min. 2 caractères</div>
+       
+        
+
+      </div>
+      <div class="form-group col-md-4">
+        <label>Nom</label>
+        <input [class.isInvalid]="submitted && form.controls.last.errors" formControlName="last" type="text" class="form-control">
+       
+          <div class="error" *ngIf="submitted && form.controls.last.hasError('required')">Champ requis</div>
+          <div class="error" *ngIf="submitted && form.controls.last.hasError('minlength')">Min. 2 caractères</div>
+      
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Email</label>
+        <input [class.isInvalid]="submitted && form.controls.email.errors" formControlName="email" type="text" class="form-control">
+        <div *ngIf="submitted && form.controls.email.errors">
+          <div class="error" *ngIf="form.controls.email.hasError('required')">Email requis</div>
+          <div class="error" *ngIf="form.controls.email.hasError('email')">Renseignez un email valide</div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Mobile</label>
+        <input formControlName="cell" type="text" class="form-control">
+      </div>
+    </div>
+    
+    <div class="form-row">
+      <div class="form-group col-md-4">
+          <label>Adresse</label>
+          <input formControlName="address" type="text" class="form-control">
+      </div>
+      <div class="form-group col-md-4">
+            <label>CP</label>
+            <input formControlName="cp" type="text" class="form-control">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputCity">Ville</label>
+        <input formControlName="city" type="text" class="form-control">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">{{textAddOrUpdate}}</button>
+</form>

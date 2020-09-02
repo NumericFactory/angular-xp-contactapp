@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary" style="background-color: #0d6caf;">
+    <!-- Navbar content -->
+    <div class="container">
+      <a class="navbar-brand" routerLink="/" href="#">{{title}}</a>
+    
+      <div class="collapse navbar-collapse" id="navbarText">
+        <div class="navbar-nav">
+          
+            <a class="nav-item nav-link" href="#" routerLink="a-propos">A propos</a>
+        
+            <a class="nav-item nav-link" href="#" routerLink="liens-utiles">Liens utiles</a>
+         
+        </div>
+      </div>
+      
+  </div>
+  </nav>
+  <div class="container">
+  
+  <!-- <app-contact-add-form></app-contact-add-form> -->
+  <div class="row">
+  
+    <div class="col-md-3 favourites text-center pt-5 border-danger">
+        <app-sidebar></app-sidebar>
+    </div>
+  
+    <div class="col-md-9">
+        <router-outlet></router-outlet>
+        <!-- <app-contacts></app-contacts>
+        <app-details></app-details> -->
+    </div>
+  
+  </div>
+  <!-- fin row -->
+  
+  </div>
+  
+  
+  
